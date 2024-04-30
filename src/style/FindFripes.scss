@@ -84,3 +84,30 @@ $text-color: #4e4e4e;
     }
   }
 }
+
+.ff-autocomplete-field {
+  position: relative;
+
+  ul {
+    margin: 0;
+    top: calc(100% - 2px);
+    padding: 0;
+    position: absolute;
+    background-color: $lightwhite-major;
+    width: 100%;
+    list-style: none;
+    border-left: 2px solid $text-color;
+    border-right: 2px solid $text-color;
+    border-bottom: 2px solid $text-color;
+
+    li {
+      padding-left: 1em;
+      padding-top: .5em;
+      padding-bottom: .5em;
+
+      &:hover {
+        background-color: $lightgreen-major;
+      }
+    }
+  }
+}
