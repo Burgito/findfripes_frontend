@@ -99,11 +99,15 @@ $text-color: #4e4e4e;
     border-left: 2px solid $text-color;
     border-right: 2px solid $text-color;
     border-bottom: 2px solid $text-color;
+    max-height: 10em;
+    overflow-y: scroll;
 
     li {
       padding-left: 1em;
       padding-top: .5em;
       padding-bottom: .5em;
+
+      user-select: none;
 
       &:hover {
         background-color: $lightgreen-major;
