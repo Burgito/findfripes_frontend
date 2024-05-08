@@ -114,4 +114,32 @@ $text-color: #4e4e4e;
       }
     }
   }
+
+  .ff-autocomplete-loader {
+    position: absolute;
+    right: .5em;
+    height: 1em;
+    width: 1em;
+    bottom: .75em;
+    z-index: 50;
+    pointer-events: none;
+    user-select: none;
+
+    border: .2em solid $text-color;
+    border-bottom-color: $lightwhite-major;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }
