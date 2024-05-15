@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const ffAxios = axios.create({
-    baseURL: 'http://localhost:3333',
-    timeout: 5000,
+    baseURL: 'https://localhost:7086/api',
+    timeout: 5000
 });
 
 // TODO write interceptor to handle bearer tokens
