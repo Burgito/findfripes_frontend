@@ -6,8 +6,10 @@ import { FripesContext } from "../pages/Home";
 
 const LocalisationSearchBar = () => {
     const fripesContext = useContext(FripesContext);
+    const { setFripes, getFripesByCity } = fripesContext!;
     return <AutocompleteSearchBar<IAddress> label="Une fripe dans ma ville ?" search={getCitiesLike}
-        callback={(loc: string) => fripesContext!.getFripesByCity(loc)} getValueTypeValue={(val: IAddress) => val.city}
+        callback={async (loc: string) => setFripes(await getFripesByCity(loc))}
+        getValueTypeValue={(val: IAddress) => val.city}
         placeholder="Montpellier, Bordeaux, ..." />
 }
 

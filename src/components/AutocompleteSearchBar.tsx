@@ -40,7 +40,10 @@ function AutocompleteSearchBar<AutocompleteValuesType>(props: IAutocompleteProps
 
     const debouncedSearch = useMemo(() => _.debounce((value: string) => {
         if (value.trim().length == 0) setValues([])
-        if (value.trim().length < 3) return;
+        if (value.trim().length < 3) {
+            setValues([])
+            return;
+        }
 
         setSearchValue(value)
     }, 400), [])
@@ -62,11 +65,22 @@ function AutocompleteSearchBar<AutocompleteValuesType>(props: IAutocompleteProps
                 {
                     values.map((c, i) =>
                         <li key={`${getValueTypeValue(c)}-${i}`}
-                            onClick={() => { setSelectedValue(getValueTypeValue(c)); callback(getValueTypeValue(c)) }}>
+                            onClick={() => {
+                                setSelectedValue(getValueTypeValue(c));
+                                setSearchValue(getValueTypeValue(c));
+                                callback(getValueTypeValue(c))
+                            }}>
                             {getValueTypeValue(c)}
                         </li>)
                 }
             </ul>}
+            {!loading && !!selectedValue && <div className="ff-autocomplete-clear-btn" onClick={() => {
+                setSelectedValue("");
+                setSearchValue("");
+                callback("");
+            }}>
+                <div>X</div>
+            </div>}
             {loading && <div className="ff-autocomplete-loader" />}
         </div>
     </div>
