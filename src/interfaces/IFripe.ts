@@ -3,6 +3,7 @@ export interface IFripePicture {
 }
 
 export interface IFripe {
+    id: number;
     name: string;
     shortDescription: string;
     longDescription: string;

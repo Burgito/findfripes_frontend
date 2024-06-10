@@ -9,7 +9,7 @@ export interface IAutocompleteProps<AutocompleteValuesType> {
     placeholder?: string;
 }
 
-function AutocompleteSearchBar<AutocompleteValuesType>(props: IAutocompleteProps<AutocompleteValuesType>) {
+function AutocompleteSearchBar<AutocompleteValuesType>(props: Readonly<IAutocompleteProps<AutocompleteValuesType>>) {
     const { label, callback, search, getValueTypeValue, placeholder } = props;
     const [selectedValue, setSelectedValue] = useState("");
     const [searchValue, setSearchValue] = useState("");

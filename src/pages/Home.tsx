@@ -1,8 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import HomeSearchBars from "../components/HomeSearchBars";
 import { IFripe } from "../interfaces/IFripe";
 import { getFripesByCity } from "../services/httpService";
-import Fripe from "../components/Fripe";
+import FripesGallery from "../components/FripesGallery";
 
 export interface IFripesContext {
     setFripes: (fripes: IFripe[]) => void;
@@ -18,11 +18,11 @@ function Home() {
         getFripes();
     }, [])
 
-    return <FripesContext.Provider value={{ setFripes, getFripesByCity }}>
+    const fripesProviderValue = useMemo(() => ({ setFripes, getFripesByCity }), [setFripes, getFripesByCity]);
+    return <FripesContext.Provider value={fripesProviderValue}>
         <div className="ff-home">
             <HomeSearchBars />
-
-            {fripes.map(f => <Fripe fripe={f} />)}
+            <FripesGallery fripes={fripes} />
         </div>
     </FripesContext.Provider>
 }
