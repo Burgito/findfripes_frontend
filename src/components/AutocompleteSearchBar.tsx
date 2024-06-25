@@ -51,7 +51,7 @@ function AutocompleteSearchBar<AutocompleteValuesType>(props: Readonly<IAutocomp
     return <div className="ff-autocomplete-searchbar ff-searchbar">
         <label htmlFor="ff-autocomplete-searchbar">{label}</label>
         <div className="ff-autocomplete-field">
-            {/* // TODO remove settimeout, idk how, but hiding li prevents clic event */}
+            {/* // TODO : remove settimeout, idk how, but hiding li prevents clic event */}
             <input id="ff-autocomplete-searchbar" type="search" placeholder={placeholder}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     const inputValue = e.target.value;

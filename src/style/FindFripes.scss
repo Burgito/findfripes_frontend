@@ -3,6 +3,7 @@ $lightbrown-minor: #ecca9c;
 $lightgreen-minor: #e8efcf;
 $lightgreen-major: #afd198;
 $lightwhite-major: #faebd7;
+$white-bg: rgb(242, 242, 242);
 
 $text-color: #4e4e4e;
 
@@ -26,7 +27,7 @@ $text-color: #4e4e4e;
     gap: 1em;
     align-items: center;
     height: 5em;
-    background-color: $lightgreen-major;
+    background-color: $white-bg;
     padding: .5em 1em;
 
     .logo {
@@ -37,14 +38,14 @@ $text-color: #4e4e4e;
 
   .ff-content {
     flex-grow: 1;
-    background-color: $lightbrown-minor;
+    background-color: $lightwhite-major;
     padding: 1em;
   }
 
   .ff-footer {
     height: 5em;
     min-height: 5em;
-    background-color: $lightgreen-major;
+    background-color: $white-bg;
     padding: .5em 1em;
   }
 
